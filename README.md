@@ -1,2 +1,8 @@
-# rpal-web-ide
-This repository contains implementation of A web Based IDE for RPAL(http://www.cise.ufl.edu/~mprasad/rpal/ ).
+# RPAL Online Interpreter
+This repository contains implementation of a web Based Interpreter for [RPAL] langugage and is hosted [here].
+
+Please raise a JIRA ticket if you find any issue with this implementation.
+
+[RPAL]: https://en.wikipedia.org/wiki/PAL_(programming_language)#RPAL
+[here]: http://www.cise.ufl.edu/~mprasad/rpal/
+

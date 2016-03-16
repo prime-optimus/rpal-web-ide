@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is an Online implementation of RPAL Interpreter.">
+    <meta name="author" content="Mukesh Prasad">
+
+    <title>RPAL Online Interpreter</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap-select.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+   	.inner {
+		height:300px;
+		padding-right:0;
+		padding-left: 0;
+		background-color: #ccc;
+	}
+	
+	.dl-horizontal dt{
+		text-align: left;		
+		width: auto;
+		padding-right: 1em;
+	}
+
+	.dl-horizontal dd{
+		text-align: left;		
+	}
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    
+
+    <!-- Page Content -->
+    <div class="container">
+		<h1>RPAL Online Interpreter</h1>
+		<div class="row">	
+			<div class="col-sm-12">
+				<span class="btn-toolbar">
+					<div class="btn-toolbar" role="tolbar">	
+						<select id="themes" title="Themes" class="selectpicker show-tick show-menu-arrow" data-style="btn-default" data-header="Select a Theme">
+							<option value="ambiance">Ambiance</option>
+							<option value="chaos">Chaos</option>
+							<option value="chrome">Chrome</option>
+							<option value="clouds">Clouds</option>
+							<option value="clouds_midnight">Clouds Midnight</option>
+							<option value="cobalt">Cobalt</option>
+							<option value="crimson_editor">Crimson Editor</option>
+							<option value="dawn">Dawn</option>
+							<option value="dreamweaver">Dreamweaver</option>
+							<option value="eclipse">Eclipse</option>
+							<option value="github">Github</option>
+							<option value="idle_fingers">Idle Fingers</option>
+							<option value="iplastic">Iplastic</option>
+							<option value="katzenmilch">Katzenmilch</option>
+							<option value="kr_theme">KR Theme</option>
+							<option value="kuroir">Kuroir</option>
+							<option value="merbivore">Merbivore</option>
+							<option value="merbivore_soft">Merbivore Soft</option>
+							<option value="monokai">Monokai</option>
+							<option value="mono_industrial">Mono Industrial</option>
+							<option value="pastel_on_dark">Pastel on Dark</option>
+							<option value="solarized_dark">Solarized Dark</option>
+							<option value="solarized_light">Solarized Light</option>
+							<option value="sqlserver">SQL Server</option>
+							<option value="terminal">Terminal</option>
+							<option value="textmate">Textmate</option>
+							<option value="tomorrow">Tomorrow</option>
+							<option value="tomorrow_night">Tomorrow Night</option>
+							<option value="tomorrow_night_blue">Tomorrow Night Blue</option>
+							<option value="tomorrow_night_bright">Tomorrow Night Bright</option>
+							<option value="tomorrow_night_eighties">Tomorrow Night Eighties</option>
+							<option value="twilight">Twilight</option>
+							<option value="vibrant_ink">Vibrant ink</option>
+							<option value="xcode">Xcode</option>
+						</select>
+						
+						<select id="tests" title="Examples" class="selectpicker show-tick show-menu-arrow">	
+							<option value="add">add</option>
+							<option value="clean">clean</option>
+							<option value="conc.1">conc.1</option>
+							<option value="conc1">conc1</option>
+							<option value="conc3">conc3</option>
+							<option value="defns.1">defns.1</option>
+							<option value="defns.2">defns.2</option>
+							<option value="defns.3">defns.3</option>
+							<option value="div">div</option>
+							<option value="envlist">envlist</option>
+							<option value="fn1">fn1</option>
+							<option value="fn2">fn2</option>
+							<option value="fn3">fn3</option>
+							<option value="ftst">ftst</option>
+							<option value="if1">if1</option>
+							<option value="if2">if2</option>
+							<option value="infix">infix</option>
+							<option value="infix2">infix2</option>
+							<option value="Innerprod">Innerprod</option>
+							<option value="Innerprod2">Innerprod2</option>
+							<option value="pairs1">pairs1</option>
+							<option value="pairs2">pairs2</option>
+							<option value="pairs3">pairs3</option>
+							<option value="pf">pf</option>
+							<option value="picture">picture</option>
+							<option value="print1">print1</option>
+							<option value="print2">print2</option>
+							<option value="prog">prog</option>
+							<option value="recurs.1">recurs.1</option>
+							<option value="reverse">reverse</option>
+							<option value="send">send</option>
+							<option value="simple.div">simple.div</option>
+							<option value="stem1">stem1</option>
+							<option value="stem2">stem2</option>
+							<option value="string1">string1</option>
+							<option value="sum">sum</option>
+							<option value="t1">t1</option>
+							<option value="t16">t16</option>
+							<option value="t18">t18</option>
+							<option value="t19">t19</option>
+							<option value="t2">t2</option>
+							<option value="t3">t3</option>
+							<option value="t3.1">t3.1</option>
+							<option value="t9">t9</option>
+							<option value="test1">test1</option>
+							<option value="tiny">tiny</option>
+							<option value="tiny.1">tiny.1</option>
+							<option value="towers">towers</option>
+							<option value="Treepicture">Treepicture</option>
+							<option value="trees">trees</option>
+							<option value="tuples">tuples</option>
+							<option value="vectorsum">vectorsum</option>
+							<option value="wsum1">wsum1</option>
+							<option value="wsum2">wsum2</option>
+						</select>
+						<span id="controls" class="btn-group pull-right" data-toggle="buttons"> 
+								<label class="btn btn-default" data-toggle="modal" data-target="#infoModal">
+										<span class="glyphicon glyphicon-info-sign" ></span>																								
+								</label>
+							   <label class="btn btn-default">
+									-ast <input type="checkbox" name="ast" data-toggle="button"> 										
+								</label>
+								<label class="btn btn-default">
+									-st <input type="checkbox" name="st" data-toggle="button"> 										
+								</label>
+								<label class="btn btn-default">
+									-noout <input type="checkbox" name="noout" data-toggle="button"> 										
+								</label>
+								<label class="btn btn-default">
+									-l <input type="checkbox" name="l" data-toggle="button"> 										
+								</label>
+								<button class="btn btn-success pull-right" href="#" role="button" id="run">Run</button>   
+						</span>
+						
+						
+					</div>
+				</span>
+			</div>
+		</div>
+		<br>
+         <div class="row">
+            <div class="col-sm-12">
+                <div class="inner jumbotron" id="editor"></div> 
+				
+				
+			</div>
+        </div><!--/row-->
+		
+		
+		<div id="results" class="row" style="display: none">
+			<h2>Results:</h2>
+			<div class="well"></div>
+		</div>
+
+
+	</div><!--/container-->
+	
+	<!-- Modal -->
+	<div id="infoModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h3 class="modal-title">RPAL Online Interpreter</h3>
+		  </div>
+		  <div class="modal-body">
+		    <h4>About</h4>
+			<p>This is an online imlementation of RPAL Programming language. RPAL, the Right-reference Pedagogic Algorithmic Language, is a functional subset of PAL language.</p>
+			<h4>Flags</h4>
+	
+			<dl class="dl-horizontal">
+			  <dt>-ast</dt>
+			  <dd>Display Abstract Syntax Tree of the RPAL Expression.</dd>			  
+			  <dt>-st</dt>
+			  <dd>Display Standarized Tree of the RPAL Expression.</dd>			  
+			  <dt>-noout</dt>
+			  <dd>Don't display result of the RPAL Expression.</dd>			  
+			  <dt>-l</dt>
+			  <dd>Display Token list of the RPAL Expression.</dd>		
+			</dl>
+			
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ace/ace.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+</body>
+
+</html>

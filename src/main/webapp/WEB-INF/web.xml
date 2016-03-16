@@ -1,0 +1,28 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>RPAL online executor</display-name>
+
+	<filter>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>RpalExecutorServlet</servlet-name>
+		<description>Executes an RPAL program</description>
+		<servlet-class>com.rpal.servlets.RpalExecutorServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RpalExecutorServlet</servlet-name>
+		<url-pattern>/execute</url-pattern>
+	</servlet-mapping>
+
+</web-app>

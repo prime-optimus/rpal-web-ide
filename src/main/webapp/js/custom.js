@@ -28,7 +28,8 @@ $("#run").bind("click", function(){
 $("#tests").bind("change", function(e){
 	$.ajax({
 		type: "GET",
-		url: "tests/"+this.value
+		url: "tests/"+this.value,
+		type: "text"
 	}).done(function(reply) {  
 		editor.setValue(reply);
 	}).error(function(reply){
